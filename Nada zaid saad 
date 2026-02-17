@@ -1,0 +1,105 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/elgaout-saadencg-netizen/IA/blob/main/Nada%20zaid%20saad%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# ===============================\n",
+        "# Données (rendements mensuels %)\n",
+        "# ===============================\n",
+        "rendements_A = np.array([\n",
+        "    1.2, 0.8, -0.5, 1.5, 0.9, 1.1, 0.7, 1.3, 1.0, 0.6, 1.4, 0.8,\n",
+        "    1.1, 0.9, -0.3, 1.2, 1.0, 1.5, 0.8, 1.3, 0.9, 1.1, 1.2, 1.0\n",
+        "])\n",
+        "\n",
+        "rendements_B = np.array([\n",
+        "    4.5, -2.1, 6.2, -3.5, 5.8, 7.1, -1.8, 4.9, 3.2, -4.2, 8.5, -2.7,\n",
+        "    5.1, 6.8, -3.1, 7.3, 4.5, -2.9, 6.7, 5.3, -3.8, 7.9, 4.2, 5.5\n",
+        "])\n",
+        "\n",
+        "# ===============================\n",
+        "# Fonction statistiques\n",
+        "# ===============================\n",
+        "def stats_portefeuille(r):\n",
+        "    moyenne = np.mean(r)\n",
+        "    ecart_type = np.std(r, ddof=1)\n",
+        "    mediane = np.median(r)\n",
+        "    rendement_annuel = ((1 + moyenne/100)**12 - 1) * 100\n",
+        "    volatilite_annuelle = ecart_type * np.sqrt(12)\n",
+        "\n",
+        "    return moyenne, ecart_type, mediane, rendement_annuel, volatilite_annuelle\n",
+        "\n",
+        "# Résultats\n",
+        "stats_A = stats_portefeuille(rendements_A)\n",
+        "stats_B = stats_portefeuille(rendements_B)\n",
+        "\n",
+        "print(\"PORTEFEUILLE A\")\n",
+        "print(f\"Moyenne mensuelle : {stats_A[0]:.2f}%\")\n",
+        "print(f\"Écart-type mensuel : {stats_A[1]:.2f}%\")\n",
+        "print(f\"Médiane : {stats_A[2]:.2f}%\")\n",
+        "print(f\"Rendement annualisé : {stats_A[3]:.2f}%\")\n",
+        "print(f\"Volatilité annualisée : {stats_A[4]:.2f}%\")\n",
+        "\n",
+        "print(\"\\nPORTEFEUILLE B\")\n",
+        "print(f\"Moyenne mensuelle : {stats_B[0]:.2f}%\")\n",
+        "print(f\"Écart-type mensuel : {stats_B[1]:.2f}%\")\n",
+        "print(f\"Médiane : {stats_B[2]:.2f}%\")\n",
+        "print(f\"Rendement annualisé : {stats_B[3]:.2f}%\")\n",
+        "print(f\"Volatilité annualisée : {stats_B[4]:.2f}%\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oWNixGjAg2C6",
+        "outputId": "e7cf8183-8734-44ca-9640-0247f6612db0"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "PORTEFEUILLE A\n",
+            "Moyenne mensuelle : 0.94%\n",
+            "Écart-type mensuel : 0.48%\n",
+            "Médiane : 1.00%\n",
+            "Rendement annualisé : 11.85%\n",
+            "Volatilité annualisée : 1.65%\n",
+            "\n",
+            "PORTEFEUILLE B\n",
+            "Moyenne mensuelle : 2.89%\n",
+            "Écart-type mensuel : 4.45%\n",
+            "Médiane : 4.70%\n",
+            "Rendement annualisé : 40.79%\n",
+            "Volatilité annualisée : 15.41%\n"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "name": "Bienvenue dans Colab",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
