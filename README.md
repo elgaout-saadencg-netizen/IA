@@ -1,7 +1,7 @@
 # 💰 Comment Amazon Finance l’IA dans le Domaine Financier  
 **Rapport synthétique — Février 2026**
 
-NOM ET PRéNOM : SAAD ELGAOUT , ZAID CHAFIK , NADA EL IMANI
+NOM ET PRÉNOM : SAAD ELGAOUT , ZAID CHAFIK , NADA EL IMANI
 
 ---
 
